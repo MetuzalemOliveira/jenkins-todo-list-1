@@ -1,4 +1,4 @@
 build-docker:
   stage: build
   script:
-  - docker build -t minha-image
+  - docker build -t minha-image 
