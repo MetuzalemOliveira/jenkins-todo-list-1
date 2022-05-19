@@ -3,12 +3,12 @@ services:
   - docker:dind
 before_script:
   - docker info
-  - echo ${{ secrets.DOCKER_TOKEN }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
 
 build-docker:
   stage: build
 
-  
+
 
   script:
   - docker build .
