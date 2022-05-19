@@ -9,4 +9,5 @@ build-docker:
   stage: build
 
   script:
-  - docker build .
+  - docker build -t minha-imagem .
+  - docker tag minha-imagem
