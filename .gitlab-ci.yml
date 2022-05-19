@@ -3,11 +3,10 @@ services:
   - docker:dind
 before_script:
   - docker info
-  - echo ${{ CI_REGISTRY_TOKEN }} | docker login --username ${{ CI_REGISTRY_USER }} --password-stdin
-  
+  - echo ${{ secrets.DOCKER_TOKEN }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
 build-docker:
   stage: build
-
 
   script:
   - docker build .
