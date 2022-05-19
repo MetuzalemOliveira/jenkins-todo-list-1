@@ -9,6 +9,5 @@ build-docker:
   stage: build
 
   script:
-  - docker build -t minha-imagem .
-  - docker tag minha-imagem metuzalem/to_do:latest
-  - docker push --all-tags minha-imagem metuzalem/to_do:latest
+  - docker build --pull -t "$CI_REGISTRY_IMAGES" .
+  - docker push "$CI_REGISTRY_IMAGES"
