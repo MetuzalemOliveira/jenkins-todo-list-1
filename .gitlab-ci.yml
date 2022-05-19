@@ -11,4 +11,4 @@ build-docker:
   script:
   - docker build -t minha-imagem .
   - docker tag minha-imagem metuzalem/to_do:latest
-  - docker push minha-imagem metuzalem/to_do:latest
+  - docker push --all-tags minha-imagem metuzalem/to_do:latest
