@@ -3,12 +3,10 @@ services:
   - docker:dind
 before_script:
   - docker info
-
+  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
 
 build-docker:
   stage: build
-
-
 
   script:
   - docker build .
