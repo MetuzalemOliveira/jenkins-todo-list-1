@@ -9,5 +9,5 @@ build-docker:
   stage: build
   script:
   - docker build --pull -t minha-imagen .
-  - docker push  minha-imagen metuzalem/minha-imagen
+  - docker push  -t minha-imagen metuzalem/to_do
   
