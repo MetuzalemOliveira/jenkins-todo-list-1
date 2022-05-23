@@ -8,6 +8,6 @@ before_script:
 build-docker:
   stage: build
   script:
-  - docker build --pull -t "$CI_REGISTRY_IMAGES" .
-  - docker push "$CI_REGISTRY_IMAGES"
+  - docker build --pull -t minha-imagen .
+  - docker push  minha-imagen metuzalem/minha-imagen
   
