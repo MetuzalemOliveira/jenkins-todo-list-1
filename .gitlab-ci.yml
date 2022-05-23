@@ -9,5 +9,5 @@ build-docker:
   stage: build
   script:
   - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-  - docker push registry.gitlab.com/metuzalem/to_do:latest
+  - docker push 
   
