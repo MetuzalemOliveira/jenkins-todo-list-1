@@ -9,6 +9,6 @@ build-docker:
   stage: build
   script:
   - docker build -t minha-imagen .
-  - docker tag minha-imagen "$CI_REGISTRY_IMAGES"
-  - docker push "$CI_REGISTRY_IMAGES"
+  - docker tag minha-imagens metuzalem/minha-imagens
+  - docker push metuzalem/minha-imagens
   
