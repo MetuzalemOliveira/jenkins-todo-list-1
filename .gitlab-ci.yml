@@ -8,8 +8,7 @@ before_script:
 build-docker:
   stage: build
   script:
-  - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+  - docker build -t "$CI_REGISTRY_IMAGE" .
   - docker tag minha-imagens "$CI_REGISTRY_IMAGE"
   - docker push "$CI_REGISTRY_IMAGE"
-  
   
