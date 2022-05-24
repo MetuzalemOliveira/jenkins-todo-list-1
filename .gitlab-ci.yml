@@ -9,4 +9,4 @@ build-docker:
   stage: build
   script:
   - docker build --pull -t metuzalem/minha-imagens  .
-  - docker push docker push metuzalem/minha-imagens:latest
+  - docker push docker.oi/metuzalem/minha-imagens:latest
