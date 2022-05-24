@@ -8,6 +8,7 @@ before_script:
 build-docker:
   stage: build
   script:
-  - docker build --pull -t minha-imagen .
-  - docker push minha-imagen metuzalem/to_do
+  - docker build -t minha-imagen .
+  - docker tag minha-imagen metuzalem/to_do:latest
+  - docker push metuzalem/to_do:latest
   
