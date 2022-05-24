@@ -3,12 +3,12 @@ services:
   - docker:dind
 before_script:
   - docker info
-  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_TOKEN" $CI_REGISTRY
+  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
 
 build-docker:
   stage: build
   script:
   - docker build -t minha-imagen .
-  - docker tag minha-imagen metuzalem/to_do:latest
-  - docker push metuzalem/to_do:latest
+  - docker tag minha-imagen "$CI_REGISTRY_IMAGES"
+  - docker push "$CI_REGISTRY_IMAGES"
   
