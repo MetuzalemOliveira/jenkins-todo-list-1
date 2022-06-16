@@ -4,7 +4,7 @@ services:
 before_script:
   - docker info
   - echo $CI_BUILD_TOKEN | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
-  - docker login $CI_REGISTRY_USER -u $CI_BUILD_TOKEN --password-stdin
+  - docker login $CI_REGISTRY -u $CI_BUILD_TOKEN --password-stdin
 build-docker:
   stage: build
   script:
