@@ -3,11 +3,13 @@ services:
   - docker:dind
 before_script:
   - docker info
-  - docker login -u "$CI_REGISTRY_USER" -p $CI_REGISTRY
-
+  - echo $CI_BUILD_TOKEN | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+  - docker login $CI_REGISTRY_USER -u $CI_BUILD_TOKEN --password-stdin
 build-docker:
   stage: build
   script:
   - docker build --pull -t minha-imagens .
   - docker tag minha-imagens metuzalem/minha-imagens:latest
   - docker push metuzalem/minha-imagens:latest
+
+  # glpat-BHay6iHUdCaKzZK1CVuw
