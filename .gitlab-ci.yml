@@ -10,9 +10,12 @@ before_script:
 build-docker:
   stage: build
   script:
-  - docker build -t minha-imagens .
-  - docker tag minha-imagens metuzalem/minha-imagens
-  - docker push metuzalem/minha-imagens:latest
+  #- docker build -t minha-imagens .
+  #- docker tag minha-imagens metuzalem/minha-imagens
+  #- docker push metuzalem/minha-imagens:latest
 
+   #- echo $CI_BUILD_TOKEN | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+   - docker build --pull -t $CI_REGISTRY_IMAGE  .
+   - docker push $CI_REGISTRY_IMAGE
   
   # glpat-BHay6iHUdCaKzZK1CVuw
